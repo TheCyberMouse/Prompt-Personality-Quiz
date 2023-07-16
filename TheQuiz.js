@@ -72,14 +72,26 @@ let questions = [
 let currentQuestion = 0;
 let scores = {Harmonizer: 0, Innovator: 0, Achiever: 0, Strategist: 0, Realist: 0, Idealist: 0, Challenger: 0};
 let buttons = [];
+let buttonSize = 50;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  textSize(32); // Adjust size of the text
+  textSize(32);
 
   for (let i = 0; i < 4; i++) {
     let button = createButton("");
-    button.position(width / 2, height / 2 - 100 + i * 60); // Arrange buttons vertically
+    button.style('font-size', '18px');
+    button.style('background-color', '#007BFF');
+    button.style('color', '#FFFFFF');
+    button.style('border', 'none');
+    button.style('padding', '15px 32px');
+    button.style('text-align', 'center');
+    button.style('text-decoration', 'none');
+    button.style('display', 'inline-block');
+    button.style('margin', '4px 2px');
+    button.style('cursor', 'pointer');
+    button.style('border-radius', '12px');
+    button.position(width / 2, height / 2 - 100 + i * 60);
     button.mousePressed(() => chooseAnswer(i));
     buttons.push(button);
   }
@@ -91,13 +103,13 @@ function draw() {
   textWrap(WORD);
 
   if (currentQuestion < questions.length) {
-    textSize(32); // Larger font size for questions
+    textSize(32);
     text(questions[currentQuestion].question, width / 2, height / 2 - 200);
     for (let i = 0; i < 4; i++) {
       buttons[i].html(questions[currentQuestion].answers[i]);
     }
   } else {
-    textSize(14); // Smaller font size for results
+    textSize(14);
     let personalityType = getPersonalityType();
     text(personalityType.title + ": " + personalityType.description, width / 2 - 200, height / 2 - 200, 400);
     for (let button of buttons) {
