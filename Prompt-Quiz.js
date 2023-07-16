@@ -103,8 +103,10 @@ function draw() {
   textWrap(WORD);
 
   if (currentQuestion < questions.length) {
-    textSize(32);
-    text(questions[currentQuestion].question, width / 2, height / 2 - 200);
+    textSize(16); // Halve the font size
+    let textBoxWidth = windowWidth * 0.8; // Make the text box 80% of the window width
+    let textX = (windowWidth - textBoxWidth) / 2; // Center the text box
+    text(questions[currentQuestion].question, textX, height / 2 - 200, textBoxWidth);
     for (let i = 0; i < 4; i++) {
       buttons[i].html(questions[currentQuestion].answers[i]);
     }
@@ -148,4 +150,6 @@ function getPersonalityType() {
 
   
   return {title: maxPersonalityType, description: descriptions[maxPersonalityType]};
+}
+
 }
