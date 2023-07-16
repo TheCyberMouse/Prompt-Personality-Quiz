@@ -89,21 +89,23 @@ function draw() {
   background(200);
   textAlign(CENTER, CENTER);
   textWrap(WORD);
-  textSize(32);
 
   if (currentQuestion < questions.length) {
+    textSize(32); // Larger font size for questions
     text(questions[currentQuestion].question, width / 2, height / 2 - 200);
     for (let i = 0; i < 4; i++) {
       buttons[i].html(questions[currentQuestion].answers[i]);
     }
   } else {
+    textSize(14); // Smaller font size for results
     let personalityType = getPersonalityType();
-    text(personalityType.title + ": " + personalityType.description, width / 2, height / 2 - 200);
+    text(personalityType.title + ": " + personalityType.description, width / 2 - 200, height / 2 - 200, 400);
     for (let button of buttons) {
       button.hide();
     }
   }
 }
+
 
 function chooseAnswer(index) {
   for (let personalityType in questions[currentQuestion].scores[index]) {
