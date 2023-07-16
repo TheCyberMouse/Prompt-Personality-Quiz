@@ -134,5 +134,6 @@ function getPersonalityType() {
     }
   }
 
+  
   return {title: maxPersonalityType, description: descriptions[maxPersonalityType]};
 }
