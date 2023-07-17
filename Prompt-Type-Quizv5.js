@@ -84,7 +84,7 @@ function setup() {
     button.position(width / 2 - 100, height / 2 - 100 + i * 60); // Adjust x-position to center the buttons
     button.style('width', '200px'); // Set button width
     button.style('height', '40px'); // Set button height
-    button.style('font-size', '20px'); // Set text size
+    button.style('font-size', '16px'); // Set text size
     button.style('background-color', 'red'); // Set button color to red
     button.mousePressed(() => chooseAnswer(i));
     buttons.push(button);
