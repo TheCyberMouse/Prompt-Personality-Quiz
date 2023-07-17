@@ -80,8 +80,8 @@ function setup() {
 
   for (let i = 0; i < 4; i++) {
     let button = createButton("");
-    // Arrange buttons in two rows of two each
-    button.position(width / 2 - 100 + (i % 2) * 200, height / 2 - 100 + Math.floor(i / 2) * 60);
+    // Arrange buttons in two rows of two each, and add some spacing between buttons
+    button.position(width / 2 - 100 - ((i % 2) * 30), height / 2 - 100 + Math.floor(i / 2) * 60);
     button.style('width', '200px'); // Set button width
     button.style('height', '40px'); // Set button height
     button.style('font-size', '20px'); // Set text size
