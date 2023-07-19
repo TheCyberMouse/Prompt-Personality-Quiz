@@ -85,7 +85,8 @@ function setup() {
     button.style('width', '200px'); // Set button width
     button.style('height', '40px'); // Set button height
     button.style('font-size', '16px'); // Set text size
-    button.style('background-color', 'red'); // Set button color to red
+    button.style('font-color', 'white'); // Set text color
+    button.style('background-color', 'black'); // Set button color 
     button.mousePressed(() => chooseAnswer(i));
     buttons.push(button);
   }
